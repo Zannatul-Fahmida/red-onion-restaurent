@@ -1,0 +1,9 @@
+.nav li span{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav li span.active{
+    color: rgb(245, 26, 62);
+}
