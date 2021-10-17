@@ -162,3 +162,5 @@ const menus = [
       category: 'dinner'  
     }
 ]
+
+export default menus;
