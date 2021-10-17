@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createContext } from 'react';
 import useFirebase from '../hooks/useFirebase';
 
