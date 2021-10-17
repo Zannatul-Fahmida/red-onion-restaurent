@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import './Menus.css';
 import { Button, Container, Row } from 'react-bootstrap';
 import useMenus from '../../../hooks/useMenus';
 import Menu from '../Menu/Menu';
-import { MenuContext } from '../../../App';
+
 
 const Menus = () => {
     const [menus] = useMenus();
-    const {food, setFood} = useContext(MenuContext);
+    const [food, setFood] = useState("lunch");
     const selectedMenus =  menus.filter(menu => menu.category === food);
 
     return (

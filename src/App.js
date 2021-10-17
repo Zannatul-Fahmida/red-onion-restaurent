@@ -1,17 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createContext, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home/Home';
 import MenuDetails from './components/Home/MenuDetails/MenuDetails';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import AuthProvider from './contexts/AuthProvider';
 
-export const MenuContext = createContext();
 
 function App() {
-  const [food, setFood] = useState("lunch");
   return (
     <div className="App">
-      <MenuContext.Provider value={{food, setFood}}>
+      <AuthProvider>
       <BrowserRouter>
       <Switch>
         <Route exact path="/">
@@ -26,9 +26,15 @@ function App() {
         <Route path="/cart">
           <Home></Home>
         </Route>
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+        <Route path="/signup">
+          <SignUp></SignUp>
+        </Route>
       </Switch>
       </BrowserRouter>
-      </MenuContext.Provider>
+      </AuthProvider>
     </div>
   );
 }
